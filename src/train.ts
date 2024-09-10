@@ -45,16 +45,66 @@ Shunday function tuzing, unga string argument pass bolsin.
 Function ushbu agrumentdagi digitlarni yangi stringda return qilsin
 MASALAN: getDigits("m14i1t") return qiladi "141"*/
 
-const getDigits = (str: string): string => {
-  return str
-    .split("")
-    .filter((ele) => {
-      if (!isNaN(+ele)) {
-        return ele;
-      }
-    })
-    .join("");
-};
+// const getDigits = (str: string): string => {
+//   return str
+//     .split("")
+//     .filter((ele) => {
+//       if (!isNaN(+ele)) {
+//         return ele;
+//       }
+//     })
+//     .join("");
+// };
 
-const result: string = getDigits("m14i1t");
-console.log("result:", result);
+// const result: string = getDigits("m14i1t");
+// console.log("result:", result);
+//********************************************************************** */
+/*Project Standarts:
+  -Logging standarts
+  -Naming standarts:
+      function, method, variable => CAMEL case    goHome
+      class =>                                    MemberService
+      folder => KEBAB 
+      css => SNAKE                                button_style 
+  
+  -Error handling
+*/
+/******************************************************************* */
+
+/**Eng ko`p ishlatiladiga API
+ Traditional Api
+ Rest api
+ GraphQL Api
+ ...
+ */
+/***************************************************************************************************** */
+/**
+  I-TASK:
+
+Shunday function yozing, u parametridagi array ichida eng kop takrorlangan raqamni topib qaytarsin.
+MASALAN: majorityElement([1,2,3,4,5,4,3,4]) return 4
+
+  */
+
+function majorityElement(arr: number[]): number | null {
+  let elementMap: { [key: number]: number } = {};
+  let maxCount = 0;
+  let majorityElement: number | null = null;
+
+  // Raqamlar necha marta uchraganini hisoblaymiz
+  for (let i = 0; i < arr.length; i++) {
+    let num = arr[i];
+    elementMap[num] = (elementMap[num] || 0) + 1;
+
+    // Eng ko'p takrorlangan raqamni topamiz
+    if (elementMap[num] > maxCount) {
+      maxCount = elementMap[num];
+      majorityElement = num;
+    }
+  }
+
+  return majorityElement;
+}
+
+// Misol
+console.log(majorityElement([1, 2, 3, 4, 5, 4, 3, 4]));
