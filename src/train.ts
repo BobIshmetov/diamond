@@ -86,25 +86,31 @@ MASALAN: majorityElement([1,2,3,4,5,4,3,4]) return 4
 
   */
 
-function majorityElement(arr: number[]): number | null {
-  let elementMap: { [key: number]: number } = {};
-  let maxCount = 0;
-  let majorityElement: number | null = null;
+// function majorityElement(arr: number[]): number | null {
+//   let elementMap: { [key: number]: number } = {};
+//   let maxCount = 0;
+//   let majorityElement: number | null = null;
 
-  // Raqamlar necha marta uchraganini hisoblaymiz
-  for (let i = 0; i < arr.length; i++) {
-    let num = arr[i];
-    elementMap[num] = (elementMap[num] || 0) + 1;
+//   // Raqamlar necha marta uchraganini hisoblaymiz
+//   for (let i = 0; i < arr.length; i++) {
+//     let num = arr[i];
+//     elementMap[num] = (elementMap[num] || 0) + 1;
 
-    // Eng ko'p takrorlangan raqamni topamiz
-    if (elementMap[num] > maxCount) {
-      maxCount = elementMap[num];
-      majorityElement = num;
-    }
-  }
+//     // Eng ko'p takrorlangan raqamni topamiz
+//     if (elementMap[num] > maxCount) {
+//       maxCount = elementMap[num];
+//       majorityElement = num;
+//     }
+//   }
 
-  return majorityElement;
-}
+//   return majorityElement;
+// }
 
-// Misol
-console.log(majorityElement([1, 2, 3, 4, 5, 4, 3, 4]));
+// // Misol
+// console.log(majorityElement([1, 2, 3, 4, 5, 4, 3, 4]));
+//********************************************************************** */
+
+/**Frontendni qurishning ikki xil development jarayoni mavjud
+ -Traditional FD => BSSR  => EJS
+ -Modern FD => SPA => REACT
+ */
