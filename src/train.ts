@@ -125,18 +125,34 @@ MASALAN: findLongestWord("I come from Uzbekistan") return "Uzbekistan"
 
 //JAVOB
 
-function findLongestWord(str: string): string {
-  const ajrat = str.split(" ");
+// function findLongestWord(str: string): string {
+//   const ajrat = str.split(" ");
 
-  let uzunsoz = "";
+//   let uzunsoz = "";
 
-  for (let i = 0; i < ajrat.length; i++) {
-    if (ajrat[i].length > uzunsoz.length) {
-      uzunsoz = ajrat[i];
-    }
-  }
+//   for (let i = 0; i < ajrat.length; i++) {
+//     if (ajrat[i].length > uzunsoz.length) {
+//       uzunsoz = ajrat[i];
+//     }
+//   }
 
-  return uzunsoz;
+//   return uzunsoz;
+// }
+// const result = findLongestWord("I come from Uzbekistan");
+// console.log(result);
+/****************************************************************************************************** */
+
+/**K-TASK: 
+
+Shunday function yozing, u string qabul qilsin va string ichidagi unli harflar sonini qaytarsin.
+MASALAN: countVowels("string") return 1;
+*/
+
+//JAVOB
+
+function countVowels(str: string) {
+  const array = str.split("");
+  return array.filter((letter) => "aeiou".includes(letter)).length;
 }
-const result = findLongestWord("I come from Uzbekistan");
-console.log(result);
+
+console.log("K-TASK:", countVowels("string"));
