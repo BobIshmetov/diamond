@@ -150,9 +150,39 @@ MASALAN: countVowels("string") return 1;
 
 //JAVOB
 
-function countVowels(str: string) {
-  const array = str.split("");
-  return array.filter((letter) => "aeiou".includes(letter)).length;
+// function countVowels(str: string) {
+//   const array = str.split("");
+//   return array.filter((letter) => "aeiou".includes(letter)).length;
+// }
+
+// console.log("K-TASK:", countVowels("string"));
+/*************************************************************************************************************** */
+
+/** Validation:
+ Frontend validation
+ Backend validation
+ Database validation
+  
+ */
+/******************************************************************************************************************** */
+
+/** L-TASK: 
+
+Shunday function yozing, u string qabul qilsin va string ichidagi hamma sozlarni chappasiga yozib va sozlar ketma-ketligini buzmasdan stringni qaytarsin.
+MASALAN: reverseSentence("we like coding!") return "ew ekil gnidoc";
+*/
+
+//JAVOB
+
+function reverseSentence(sentence: string): string {
+  // Stringni bo'sh joylar orqali so'zlarga ajratamiz
+  const words = sentence.split(" ");
+
+  // Har bir so'zni chappasiga aylantirib yangi arrayga qo'shamiz
+  const reversedWords = words.map((word) => word.split("").reverse().join(""));
+
+  // Chappasiga bo'lgan so'zlarni bo'sh joy bilan birlashtiramiz
+  return reversedWords.join(" ");
 }
 
-console.log("K-TASK:", countVowels("string"));
+console.log(reverseSentence("we like coding!"));
