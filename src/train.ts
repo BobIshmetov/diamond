@@ -174,15 +174,38 @@ MASALAN: reverseSentence("we like coding!") return "ew ekil gnidoc";
 
 //JAVOB
 
-function reverseSentence(sentence: string): string {
-  // Stringni bo'sh joylar orqali so'zlarga ajratamiz
-  const words = sentence.split(" ");
+// function reverseSentence(sentence: string): string {
+//   // Stringni bo'sh joylar orqali so'zlarga ajratamiz
+//   const words = sentence.split(" ");
 
-  // Har bir so'zni chappasiga aylantirib yangi arrayga qo'shamiz
-  const reversedWords = words.map((word) => word.split("").reverse().join(""));
+//   // Har bir so'zni chappasiga aylantirib yangi arrayga qo'shamiz
+//   const reversedWords = words.map((word) => word.split("").reverse().join(""));
 
-  // Chappasiga bo'lgan so'zlarni bo'sh joy bilan birlashtiramiz
-  return reversedWords.join(" ");
+//   // Chappasiga bo'lgan so'zlarni bo'sh joy bilan birlashtiramiz
+//   return reversedWords.join(" ");
+// }
+
+// console.log(reverseSentence("we like coding!"));
+
+/************************************************************************************************* */
+
+// M-TASK:
+
+// Shunday function yozing, u raqamlardan tashkil topgan array qabul qilsin va array ichidagi har bir raqam uchun raqamni ozi va hamda osha raqamni kvadratidan tashkil topgan object hosil qilib, hosil bolgan objectlarni array ichida qaytarsin.
+// MASALAN: getSquareNumbers([1, 2, 3]) return [{number: 1, square: 1}, {number: 2, square: 4}, {number: 3, square: 9}];
+
+//JAVOB
+
+function getSquareNumbers(numbers: number[]) {
+  const result: any[] = [];
+  for (let num of numbers) {
+    result.push({
+      number: num,
+      square: num * num,
+    });
+  }
+  return result;
 }
 
-console.log(reverseSentence("we like coding!"));
+const result = getSquareNumbers([1, 2, 3]);
+console.log("M-TASK", result);
