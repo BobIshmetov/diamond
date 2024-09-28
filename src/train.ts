@@ -196,16 +196,39 @@ MASALAN: reverseSentence("we like coding!") return "ew ekil gnidoc";
 
 //JAVOB
 
-function getSquareNumbers(numbers: number[]) {
-  const result: any[] = [];
-  for (let num of numbers) {
-    result.push({
-      number: num,
-      square: num * num,
-    });
-  }
-  return result;
+// function getSquareNumbers(numbers: number[]) {
+//   const result: any[] = [];
+//   for (let num of numbers) {
+//     result.push({
+//       number: num,
+//       square: num * num,
+//     });
+//   }
+//   return result;
+// }
+
+// const result = getSquareNumbers([1, 2, 3]);
+// console.log("M-TASK", result);
+
+/******************************************************************************************************** */
+
+/**N-TASK: 
+
+Shunday function yozing, u string qabul qilsin va string palindrom yani togri oqilganda ham, orqasidan oqilganda
+ham bir hil oqiladigan soz ekanligini aniqlab boolean qiymat qaytarsin.
+MASALAN: palindromCheck("dad") return true;  palindromCheck("son") return false;
+*/
+
+//JAVOB
+
+function palindromCheck(suz: string): boolean {
+  const cleanedSuz = suz.toLowerCase();
+
+  const reversedSuz = cleanedSuz.split("").reverse().join("");
+
+  // Asl so'z va teskari so'zni taqqoslaymiz
+  return cleanedSuz === reversedSuz;
 }
 
-const result = getSquareNumbers([1, 2, 3]);
-console.log("M-TASK", result);
+console.log(palindromCheck("dad"));
+console.log(palindromCheck("son"));
