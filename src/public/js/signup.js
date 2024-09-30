@@ -46,11 +46,12 @@ function validateSignupForm() {
     alert("Password differs, pleace check!");
     return false;
   }
+
+  const memeberImage = $(".member-image").get(0).files[0]
+    ? $(".member-image").get(0).files[0].name
+    : null;
+  if (!memeberImage) {
+    alert("Please insert restaurant image!");
+    return false;
+  }
 }
-// const memeberImage = $(".member-image").get(0).files[0]
-//   ? $(".member-image").get(0).files[0].name
-//   : null;
-// if (!memeberImage) {
-//   alert("Please insert restaurant image!");
-//   return false;
-// }
