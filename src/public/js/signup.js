@@ -14,7 +14,7 @@ $(function () {
       } else {
         if (uploadFile) {
           console.log(URL.createObjectURL(uploadFile));
-          $("upload-img-frame")
+          $(".upload-img-frame")
             .attr("src", URL.createObjectURL(uploadFile))
             .addClass("success");
         }
@@ -47,10 +47,10 @@ function validateSignupForm() {
     return false;
   }
 }
-const memeberImage = $(".member-image").get(0).files[0]
-  ? $(".member-image").get(0).files[0].name
-  : null;
-if (!memeberImage) {
-  alert("Please insert restaurant image!");
-  return false;
-}
+// const memeberImage = $(".member-image").get(0).files[0]
+//   ? $(".member-image").get(0).files[0].name
+//   : null;
+// if (!memeberImage) {
+//   alert("Please insert restaurant image!");
+//   return false;
+// }
