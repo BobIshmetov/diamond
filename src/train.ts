@@ -221,14 +221,37 @@ MASALAN: palindromCheck("dad") return true;  palindromCheck("son") return false;
 
 //JAVOB
 
-function palindromCheck(suz: string): boolean {
-  const cleanedSuz = suz.toLowerCase();
+// function palindromCheck(suz: string): boolean {
+//   const cleanedSuz = suz.toLowerCase();
 
-  const reversedSuz = cleanedSuz.split("").reverse().join("");
+//   const reversedSuz = cleanedSuz.split("").reverse().join("");
 
-  // Asl so'z va teskari so'zni taqqoslaymiz
-  return cleanedSuz === reversedSuz;
+//   // Asl so'z va teskari so'zni taqqoslaymiz
+//   return cleanedSuz === reversedSuz;
+// }
+
+// console.log(palindromCheck("dad"));
+// console.log(palindromCheck("son"));
+
+/******************************************************************************************************** */
+
+/**O-TASK:
+
+Shunday function yozing, u har xil valuelardan iborat array qabul qilsin va array ichidagi sonlar yigindisini hisoblab chiqqan javobni qaytarsin.
+MASALAN: calculateSumOfNumbers([10, "10", {son: 10}, true, 35]) return 45*/
+
+//JAVOB
+
+function calculateSumOfNumbers(arr: any[]): number {
+  let sum = 0;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (typeof arr[i] === "number") {
+      sum += arr[i];
+    }
+  }
+
+  return sum;
 }
 
-console.log(palindromCheck("dad"));
-console.log(palindromCheck("son"));
+console.log(calculateSumOfNumbers([10, "10", { son: 10 }, true, 35]));
