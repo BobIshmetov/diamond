@@ -242,16 +242,37 @@ MASALAN: calculateSumOfNumbers([10, "10", {son: 10}, true, 35]) return 45*/
 
 //JAVOB
 
-function calculateSumOfNumbers(arr: any[]): number {
-  let sum = 0;
+// function calculateSumOfNumbers(arr: any[]): number {
+//   let sum = 0;
 
-  for (let i = 0; i < arr.length; i++) {
-    if (typeof arr[i] === "number") {
-      sum += arr[i];
+//   for (let i = 0; i < arr.length; i++) {
+//     if (typeof arr[i] === "number") {
+//       sum += arr[i];
+//     }
+//   }
+
+//   return sum;
+// }
+
+// console.log(calculateSumOfNumbers([10, "10", { son: 10 }, true, 35]));
+/****************************************************************************************************** *****************/
+
+/*P-TASK:
+
+Shunday function yozing, u object qabul qilsin va arrayni object arrayga otkazib arrayni  qaytarsin.
+MASALAN: objectToArray( {a: 10, b: 20}) return [['a', 10], ['b', 20]]
+*/
+
+function objectToArray(obj: { [key: string]: any }): [string, any][] {
+  const result: [string, any][] = [];
+
+  for (let key in obj) {
+    if (obj.hasOwnProperty(key)) {
+      result.push([key, obj[key]]);
     }
   }
 
-  return sum;
+  return result;
 }
 
-console.log(calculateSumOfNumbers([10, "10", { son: 10 }, true, 35]));
+console.log(objectToArray({ a: 10, b: 20 })); // [['a', 10], ['b', 20]]
