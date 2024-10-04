@@ -263,16 +263,32 @@ Shunday function yozing, u object qabul qilsin va arrayni object arrayga otkazib
 MASALAN: objectToArray( {a: 10, b: 20}) return [['a', 10], ['b', 20]]
 */
 
-function objectToArray(obj: { [key: string]: any }): [string, any][] {
-  const result: [string, any][] = [];
+// function objectToArray(obj: { [key: string]: any }): [string, any][] {
+//   const result: [string, any][] = [];
 
-  for (let key in obj) {
-    if (obj.hasOwnProperty(key)) {
-      result.push([key, obj[key]]);
-    }
-  }
+//   for (let key in obj) {
+//     if (obj.hasOwnProperty(key)) {
+//       result.push([key, obj[key]]);
+//     }
+//   }
 
-  return result;
+//   return result;
+// }
+
+// console.log(objectToArray({ a: 10, b: 20 })); // [['a', 10], ['b', 20]]
+
+/*********************************************************************************************************************** */
+
+/** Q-TASK:
+
+Shunday function yozing, u 2 ta parametrgga ega bolib birinchisi object, ikkinchisi string. Agar string parametr objectni propertysi bolsa true bolmasa false qaytarsin.
+MASALAN: hasProperty({name: "BMW", model: "M3"}, "model") return true; hasProperty({name: "BMW", model: "M3"}, "year") return false*/
+
+//JAVOB
+
+function hasProperty(obj: object, prop: string): boolean {
+  return obj.hasOwnProperty(prop);
 }
 
-console.log(objectToArray({ a: 10, b: 20 })); // [['a', 10], ['b', 20]]
+console.log(hasProperty({ name: "BMW", model: "M3" }, "model"));
+console.log(hasProperty({ name: "BMW", model: "M3" }, "year"));
