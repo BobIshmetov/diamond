@@ -300,11 +300,31 @@ Shunday function yozing, u string parametrga ega bolsin. String "1+2" holatda pa
 string ichidagi sonlar yigindisini number holatda qaytarsin.
 MASALAN: calculate("1+3") return 4;*/
 
-function calculate(sonlar: string): number {
-  const numbers = sonlar.split("+").map(Number);
+// function calculate(sonlar: string): number {
+//   const numbers = sonlar.split("+").map(Number);
 
-  return numbers.reduce((acc, curr) => acc + curr, 0);
+//   return numbers.reduce((acc, curr) => acc + curr, 0);
+// }
+
+// console.log(calculate("1+3"));
+// console.log(calculate("10+20+30"));
+/*************************************************************************************************************************** */
+
+// S-TASK:
+
+// Shunday function yozing, u numberlardan tashkil topgan array qabul qilsin va osha numberlar orasidagi tushib qolgan sonni topib uni return qilsin
+// MASALAN: missingNumber([3, 0, 1]) return 2
+
+//JAVOB
+
+function missingNumber(nums: number[]): number {
+  const n = nums.length;
+
+  const totalSum = (n * (n + 1)) / 2;
+
+  const actualSum = nums.reduce((acc, curr) => acc + curr, 0);
+
+  return totalSum - actualSum;
 }
 
-console.log(calculate("1+3"));
-console.log(calculate("10+20+30"));
+console.log(missingNumber([3, 0, 1]));
