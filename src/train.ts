@@ -317,14 +317,31 @@ MASALAN: calculate("1+3") return 4;*/
 
 //JAVOB
 
-function missingNumber(nums: number[]): number {
-  const n = nums.length;
+// function missingNumber(nums: number[]): number {
+//   const n = nums.length;
 
-  const totalSum = (n * (n + 1)) / 2;
+//   const totalSum = (n * (n + 1)) / 2;
 
-  const actualSum = nums.reduce((acc, curr) => acc + curr, 0);
+//   const actualSum = nums.reduce((acc, curr) => acc + curr, 0);
 
-  return totalSum - actualSum;
+//   return totalSum - actualSum;
+// }
+
+// console.log(missingNumber([3, 0, 1]));
+/******************************************************************************************** */
+
+/*T-TASK:
+
+Shunday function yozing, u sonlardan tashkil topgan 2 ta array qabul qilsin va ikkala arraydagi sonlarni tartiblab bir arrayda qaytarsin
+MASALAN: mergeSortedArrays([0,3,4,31], [4,6,30]); return [0,3,4,4,6,30,31]
+
+*/
+//JAVOB
+
+function mergeSortedArrays(arr1: number[], arr2: number[]): number[] {
+  const mergedArray = [...arr1, ...arr2];
+
+  return mergedArray.sort((a, b) => a - b);
 }
 
-console.log(missingNumber([3, 0, 1]));
+console.log(mergeSortedArrays([0, 3, 4, 31], [4, 6, 30]));
