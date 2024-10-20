@@ -393,12 +393,51 @@ MASALAN: chunkArray([1,2,3,4,5,6,7,8,9,10], 3) return [[1,2,3], [4,5,6], [7,8,9]
 
 //JAVOB
 
-function chunkArray(arr: any[], chunkSize: number): any[][] {
-  const result = [];
-  for (let i = 0; i < arr.length; i += chunkSize) {
-    result.push(arr.slice(i, i + chunkSize));
+// function chunkArray(arr: any[], chunkSize: number): any[][] {
+//   const result = [];
+//   for (let i = 0; i < arr.length; i += chunkSize) {
+//     result.push(arr.slice(i, i + chunkSize));
+//   }
+//   return result;
+// }
+
+// console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3));
+
+/****************************************************************************************** */
+
+/**X-TASK:
+
+Shunday function yozing, uni object va string parametrlari bo'lsin.
+Bu function, birinchi object parametri tarkibida, kalit sifatida ikkinchi string parametri
+necha marotaba takrorlanganlini sanab qaytarsin.
+
+Eslatma => Nested object'lar ham sanalsin
+
+MASALAN: countOccurrences({model: 'Bugatti', steer: {model: 'HANKOOK', size: 30}}, 'model') return 2
+
+Yuqoridagi misolda, birinchi argument object, ikkinchi argument 'model'.
+Funktsiya, shu ikkinchi argument 'model', birinchi argument object
+tarkibida kalit sifatida 2 marotaba takrorlanganligi uchun 2 soni return qilmoqda*/
+
+//JAVOB
+
+function countOccurrences(obj: any, keyToFind: string): number {
+  let count = 0;
+
+  // Obyektdagi barcha kalitlarni tekshirish
+  for (const key in obj) {
+    if (key === keyToFind) {
+      count++; // Agar kalit mos kelsa, sanash
+    }
+
+    // Agar obyekt ichida yana obyekt bo'lsa, rekursiv chaqiramiz
+    if (typeof obj[key] === "object" && obj[key] !== null) {
+      count += countOccurrences(obj[key], keyToFind);
+    }
   }
-  return result;
+
+  return count;
 }
 
-console.log(chunkArray([1, 2, 3, 4, 5, 6, 7, 8, 9, 10], 3));
+const obj = { model: "Bugatti", steer: { model: "HANKOOK", size: 30 } };
+console.log(countOccurrences(obj, "model"));
