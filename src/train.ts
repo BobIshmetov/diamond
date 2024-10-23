@@ -421,23 +421,40 @@ tarkibida kalit sifatida 2 marotaba takrorlanganligi uchun 2 soni return qilmoqd
 
 //JAVOB
 
-function countOccurrences(obj: any, keyToFind: string): number {
-  let count = 0;
+// function countOccurrences(obj: any, keyToFind: string): number {
+//   let count = 0;
 
-  // Obyektdagi barcha kalitlarni tekshirish
-  for (const key in obj) {
-    if (key === keyToFind) {
-      count++; // Agar kalit mos kelsa, sanash
-    }
+//   // Obyektdagi barcha kalitlarni tekshirish
+//   for (const key in obj) {
+//     if (key === keyToFind) {
+//       count++; // Agar kalit mos kelsa, sanash
+//     }
 
-    // Agar obyekt ichida yana obyekt bo'lsa, rekursiv chaqiramiz
-    if (typeof obj[key] === "object" && obj[key] !== null) {
-      count += countOccurrences(obj[key], keyToFind);
-    }
-  }
+//     // Agar obyekt ichida yana obyekt bo'lsa, rekursiv chaqiramiz
+//     if (typeof obj[key] === "object" && obj[key] !== null) {
+//       count += countOccurrences(obj[key], keyToFind);
+//     }
+//   }
 
-  return count;
+//   return count;
+// }
+
+// const obj = { model: "Bugatti", steer: { model: "HANKOOK", size: 30 } };
+// console.log(countOccurrences(obj, "model"));
+/***************************************************************************** */
+
+/**
+ Y-TASK:
+
+Shunday function yozing, uni 2 ta array parapetri bolsin. Function ikkala arrayda ham 
+ishtirok etgan qiymatlarni bir arrayda qaytarsin
+MASALAN: findIntersection([1,2,3], [3,2,0]) return [2,3]
+ */
+
+//JAVOB
+
+function findIntersection<T>(arr1: T[], arr2: T[]): T[] {
+  return arr1.filter((value) => arr2.includes(value));
 }
 
-const obj = { model: "Bugatti", steer: { model: "HANKOOK", size: 30 } };
-console.log(countOccurrences(obj, "model"));
+console.log(findIntersection([1, 2, 3], [3, 2, 0]));
