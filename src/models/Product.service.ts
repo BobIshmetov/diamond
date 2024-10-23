@@ -61,6 +61,9 @@ class ProductService {
       .exec();
 
     if (!result) throw new Errors(HttpCode.NOT_FOUND, Message.NO_DATA_FOUND);
+
+    // TODO: If authenticated users => first => view log creation
+
     return result;
   }
 
