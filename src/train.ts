@@ -453,8 +453,26 @@ MASALAN: findIntersection([1,2,3], [3,2,0]) return [2,3]
 
 //JAVOB
 
-function findIntersection<T>(arr1: T[], arr2: T[]): T[] {
-  return arr1.filter((value) => arr2.includes(value));
+// function findIntersection<T>(arr1: T[], arr2: T[]): T[] {
+//   return arr1.filter((value) => arr2.includes(value));
+// }
+
+// console.log(findIntersection([1, 2, 3], [3, 2, 0]));
+
+/****************************************************************************************** */
+
+/**
+Z-TASK:
+
+Shunday function yozing, u sonlardan tashkil topgan array qabul qilsin. Function arraydagi juft sonlarni yigindisini qaytarsin
+MASALAN: sumEvens([1,2,3]) return 2 */
+
+//JAVOB
+
+function sumEvens(numbers: number[]): number {
+  return numbers.reduce((sum, num) => {
+    return num % 2 === 0 ? sum + num : sum;
+  }, 0);
 }
 
-console.log(findIntersection([1, 2, 3], [3, 2, 0]));
+console.log(sumEvens([1, 2, 3]));
