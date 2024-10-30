@@ -469,10 +469,27 @@ MASALAN: sumEvens([1,2,3]) return 2 */
 
 //JAVOB
 
-function sumEvens(numbers: number[]): number {
-  return numbers.reduce((sum, num) => {
-    return num % 2 === 0 ? sum + num : sum;
-  }, 0);
+// function sumEvens(numbers: number[]): number {
+//   return numbers.reduce((sum, num) => {
+//     return num % 2 === 0 ? sum + num : sum;
+//   }, 0);
+// }
+
+// console.log(sumEvens([1, 2, 3]));
+/***************************************************************************************** */
+
+/*
+ZA-TASK:
+
+Shunday function yozing, u array ichidagi objectlarni “age” qiymati boyicha sortlab bersin. 
+MASALAN: sortByAge([{age:23}, {age:21}, {age:13}]) return [{age:13}, {age:21}, {age:23}]
+
+*/
+
+//JAVOB
+
+function sortByAge(objects: { age: number }[]): { age: number }[] {
+  return objects.sort((a, b) => a.age - b.age);
 }
 
-console.log(sumEvens([1, 2, 3]));
+console.log(sortByAge([{ age: 23 }, { age: 21 }, { age: 13 }]));
