@@ -488,8 +488,23 @@ MASALAN: sortByAge([{age:23}, {age:21}, {age:13}]) return [{age:13}, {age:21}, {
 
 //JAVOB
 
-function sortByAge(objects: { age: number }[]): { age: number }[] {
-  return objects.sort((a, b) => a.age - b.age);
+// function sortByAge(objects: { age: number }[]): { age: number }[] {
+//   return objects.sort((a, b) => a.age - b.age);
+// }
+
+// console.log(sortByAge([{ age: 23 }, { age: 21 }, { age: 13 }]));
+/***************************************************************************************** */
+/**
+ZB-TASK:
+
+Shunday function yozing, uni 2 ta number parametri bolsin va berilgan sonlar orasidan random raqam return qilsin
+MASALAN: randomBetween(30, 50) return 45
+
+*/
+//JAVOB
+
+function randomBetween(min: number, max: number): number {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-console.log(sortByAge([{ age: 23 }, { age: 21 }, { age: 13 }]));
+console.log(randomBetween(30, 50));
