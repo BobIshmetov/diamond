@@ -503,8 +503,30 @@ MASALAN: randomBetween(30, 50) return 45
 */
 //JAVOB
 
-function randomBetween(min: number, max: number): number {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+// function randomBetween(min: number, max: number): number {
+//   return Math.floor(Math.random() * (max - min + 1)) + min;
+// }
+
+// console.log(randomBetween(30, 50));
+/**************************************************************************************** */
+/*
+TASK ZC
+
+Selisy (°C) shkalasi bo'yicha raqam qabul qilib, uni
+Ferenhayt (°F) shkalisaga o'zgaritib beradigan function yozing.
+
+MASALAN: celsiusToFahrenheit(0) return 32;
+MASALAN: celsiusToFahrenheit(10) return 50;
+
+Yuqoridagi misolda, 0°C, 32°F'ga teng.
+Yoki 10 gradus Selsiy, 50 Farenhaytga teng.
+
+°C va °F => Tempraturani o'lchashda ishlatiladigan o'lchov birligi.
+*/
+//JAVOB
+
+function celsiusToFahrenheit(celsius: number): number {
+  return (celsius * 9) / 5 + 32;
 }
 
-console.log(randomBetween(30, 50));
+console.log(celsiusToFahrenheit(45));
