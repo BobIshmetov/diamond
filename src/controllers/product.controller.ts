@@ -78,7 +78,7 @@ productController.createNewProduct = async (
 
     const data: ProductInput = req.body;
     data.productImages = req.files?.map((ele) => {
-      return ele.path.replace(/\\/g, "");
+      return ele.path.replace(/\\/g, "/");
     });
 
     await productService.createNewProduct(data);

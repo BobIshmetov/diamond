@@ -7,6 +7,7 @@ function getTargetImageStorage(address: any) {
   return multer.diskStorage({
     destination: function (req, file, cb) {
       cb(null, `./uploads/${address}`);
+      console.log("xatolik:", address);
     },
     filename: function (req, file, cb) {
       console.log(file);
