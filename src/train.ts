@@ -551,13 +551,34 @@ yangilangan arrayni qaytarmoqda.
 
 //JAVOB
 
-function changeNumberInArray(
-  index: number,
-  array: number[],
-  newValue: number
-): number[] {
-  array[index] = newValue;
-  return array;
+// function changeNumberInArray(
+//   index: number,
+//   array: number[],
+//   newValue: number
+// ): number[] {
+//   array[index] = newValue;
+//   return array;
+// }
+
+// console.log(changeNumberInArray(1, [1, 3, 7, 2], 2));
+/******************************************************************************* */
+
+/**
+ ZE-TASK:
+
+Shunday function yozing, uni  string parametri bolsin. String ichida takrorlangan harflarni olib tashlab qolganini qaytarsin
+MASALAN: removeDuplicate('stringg') return 'string'
+ */
+
+//JAVOB
+function removeDuplicate(input: string): string {
+  let uniqueChars = "";
+  for (let char of input) {
+    if (!uniqueChars.includes(char)) {
+      uniqueChars += char;
+    }
+  }
+  return uniqueChars;
 }
 
-console.log(changeNumberInArray(1, [1, 3, 7, 2], 2));
+console.log(removeDuplicate("stringg"));
