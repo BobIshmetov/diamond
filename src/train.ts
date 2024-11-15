@@ -582,3 +582,21 @@ MASALAN: removeDuplicate('stringg') return 'string'
 // }
 
 // console.log(removeDuplicate("stringg"));
+/******************************************************************************* */
+
+/**
+ ZG-TASK
+
+String sifatida berilgan string parametrni
+snake case'ga o'tkazib beradigan function yozing.
+
+MASALAN: convertToSnakeCase('name should be a string')
+return 'name_should_be_a_string'
+*/
+//JAVOB
+
+function convertToSnakeCase(input: string): string {
+  return input.toLowerCase().replace(/\s+/g, "_");
+}
+
+console.log(convertToSnakeCase("name should be a string"));
