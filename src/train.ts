@@ -571,14 +571,14 @@ MASALAN: removeDuplicate('stringg') return 'string'
  */
 
 //JAVOB
-function removeDuplicate(input: string): string {
-  let uniqueChars = "";
-  for (let char of input) {
-    if (!uniqueChars.includes(char)) {
-      uniqueChars += char;
-    }
-  }
-  return uniqueChars;
-}
+// function removeDuplicate(input: string): string {
+//   let uniqueChars = "";
+//   for (let char of input) {
+//     if (!uniqueChars.includes(char)) {
+//       uniqueChars += char;
+//     }
+//   }
+//   return uniqueChars;
+// }
 
-console.log(removeDuplicate("stringg"));
+// console.log(removeDuplicate("stringg"));
