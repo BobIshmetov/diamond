@@ -608,10 +608,32 @@ ZH-TASK:
 Shunday function yozing, u berilgan array parametrni ichidagi eng katta raqamgacha tushib qolgan raqamlarni bir arrayda qaytarsin. 
 MASALAN: findDisappearedNumbers([1, 3, 4, 7]) return [2, 5, 6]*/
 
-function findDisappearedNumbers(arr: number[]): number[] {
-  const maxNum = Math.max(...arr);
-  const allNumbers = Array.from({ length: maxNum }, (_, i) => i + 1);
-  return allNumbers.filter((num) => !arr.includes(num));
+// function findDisappearedNumbers(arr: number[]): number[] {
+//   const maxNum = Math.max(...arr);
+//   const allNumbers = Array.from({ length: maxNum }, (_, i) => i + 1);
+//   return allNumbers.filter((num) => !arr.includes(num));
+// }
+
+// console.log(findDisappearedNumbers([1, 3, 4, 7]));
+/******************************************************************************* */
+
+/**
+
+ZI-TASK:
+
+Shunday function yozing, u function ishga tushgandan 3 soniyadan keyin "Hello World" ni qaytarsin.
+MASALAN: delayHelloWorld("Hello World") return "Hello World"
+*/
+
+async function delayHelloWorld(message: string): Promise<string> {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(message);
+    }, 3000);
+  });
 }
 
-console.log(findDisappearedNumbers([1, 3, 4, 7]));
+(async () => {
+  const result = await delayHelloWorld("Hello World");
+  console.log(result);
+})();
