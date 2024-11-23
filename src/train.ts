@@ -650,16 +650,43 @@ MASALAN: reduceNestedArray([1, [1, 2, [4]]]) return 8
 
 //JAVOB
 
-function reduceNestedArray(arr: any[]): number {
-  return arr.reduce((sum, item) => {
-    if (Array.isArray(item)) {
-      return sum + reduceNestedArray(item);
-    } else if (typeof item === "number") {
-      return sum + item;
+// function reduceNestedArray(arr: any[]): number {
+//   return arr.reduce((sum, item) => {
+//       if (Array.isArray(item)) {
+//           return sum + reduceNestedArray(item);
+//       } else if (typeof item === "number") {
+//           return sum + item;
+//       }
+//       return sum;
+//   }, 0);
+// }
+
+// const result = reduceNestedArray([1, [1, 2, [4]]]);
+// console.log(result);
+
+/******************************************************************************* */
+
+/**
+TASK ZK:
+
+Shunday function yozing, bu function har bir soniyada bir marotaba
+console'ga 1'dan 5'gacha bo'lgan raqamlarni chop etsin va
+5 soniyadan so'ng function o'z ishini to'xtatsin
+  
+MASALAN: printNumbers(); 
+
+*/
+//JAVOB
+
+function raqamChopEt() {
+  let currentNumber = 1;
+  const intervalId = setInterval(() => {
+    console.log(currentNumber);
+    if (currentNumber === 5) {
+      clearInterval(intervalId);
     }
-    return sum;
-  }, 0);
+    currentNumber++;
+  }, 1000);
 }
 
-const result = reduceNestedArray([1, [1, 2, [4]]]);
-console.log(result);
+raqamChopEt();
