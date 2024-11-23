@@ -625,15 +625,41 @@ Shunday function yozing, u function ishga tushgandan 3 soniyadan keyin "Hello Wo
 MASALAN: delayHelloWorld("Hello World") return "Hello World"
 */
 
-async function delayHelloWorld(message: string): Promise<string> {
-  return new Promise((resolve) => {
-    setTimeout(() => {
-      resolve(message);
-    }, 3000);
-  });
+// async function delayHelloWorld(message: string): Promise<string> {
+//   return new Promise((resolve) => {
+//     setTimeout(() => {
+//       resolve(message);
+//     }, 3000);
+//   });
+// }
+
+// (async () => {
+//   const result = await delayHelloWorld("Hello World");
+//   console.log(result);
+// })();
+/******************************************************************************* */
+
+/**
+
+ZJ-TASK:
+
+Shunday function yozing, u berilgan arrayni ichidagi numberlarni qiymatini hisoblab qaytarsin.
+MASALAN: reduceNestedArray([1, [1, 2, [4]]]) return 8
+
+*/
+
+//JAVOB
+
+function reduceNestedArray(arr: any[]): number {
+  return arr.reduce((sum, item) => {
+    if (Array.isArray(item)) {
+      return sum + reduceNestedArray(item);
+    } else if (typeof item === "number") {
+      return sum + item;
+    }
+    return sum;
+  }, 0);
 }
 
-(async () => {
-  const result = await delayHelloWorld("Hello World");
-  console.log(result);
-})();
+const result = reduceNestedArray([1, [1, 2, [4]]]);
+console.log(result);
