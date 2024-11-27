@@ -678,15 +678,30 @@ MASALAN: printNumbers();
 */
 //JAVOB
 
-function raqamChopEt() {
-  let currentNumber = 1;
-  const intervalId = setInterval(() => {
-    console.log(currentNumber);
-    if (currentNumber === 5) {
-      clearInterval(intervalId);
-    }
-    currentNumber++;
-  }, 1000);
+// function raqamChopEt() {
+//   let currentNumber = 1;
+//   const intervalId = setInterval(() => {
+//     console.log(currentNumber);
+//     if (currentNumber === 5) {
+//       clearInterval(intervalId);
+//     }
+//     currentNumber++;
+//   }, 1000);
+// }
+
+// raqamChopEt();
+/******************************************************************************* */
+
+/**ZL-TASK:
+
+Shunday function yozing, u parametrda berilgan stringni kebab casega otkazib qaytarsin.
+Bosh harflarni kichik harflarga ham otkazsin.
+MASALAN: stringToKebab(“I love Kebab”) return “i-love-kebab”
+*/
+//JAVOB
+
+function stringToKebab(input: string): string {
+  return input.trim().toLowerCase().replace(/\s+/g, "-");
 }
 
-raqamChopEt();
+console.log(stringToKebab("I love Kebab"));
