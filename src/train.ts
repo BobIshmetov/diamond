@@ -700,8 +700,24 @@ MASALAN: stringToKebab(“I love Kebab”) return “i-love-kebab”
 */
 //JAVOB
 
-function stringToKebab(input: string): string {
-  return input.trim().toLowerCase().replace(/\s+/g, "-");
+// function stringToKebab(input: string): string {
+//   return input.trim().toLowerCase().replace(/\s+/g, "-");
+// }
+
+// console.log(stringToKebab("I love Kebab"));
+/******************************************************************************* */
+
+/**ZM-TASK:
+
+Shunday function yozing, uni array va number parametri bolsin. 
+Ikkinchi parametrda berilgan raqamli indexgacha arrayni orqasiga ogirib qaytarsin.
+MASALAN: rotateArray([1, 2, 3, 4, 5, 6], 3) return [5, 6, 1, 2, 3, 4]
+*/
+//JAVOB
+function rotateArray(arr: number[], index: number): number[] {
+  const rotatedPart = arr.slice(index + 1);
+  const remainingPart = arr.slice(0, index + 1);
+  return rotatedPart.concat(remainingPart);
 }
 
-console.log(stringToKebab("I love Kebab"));
+console.log(rotateArray([1, 2, 3, 4, 5, 6], 3));
