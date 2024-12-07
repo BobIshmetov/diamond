@@ -714,10 +714,41 @@ Ikkinchi parametrda berilgan raqamli indexgacha arrayni orqasiga ogirib qaytarsi
 MASALAN: rotateArray([1, 2, 3, 4, 5, 6], 3) return [5, 6, 1, 2, 3, 4]
 */
 //JAVOB
-function rotateArray(arr: number[], index: number): number[] {
-  const rotatedPart = arr.slice(index + 1);
-  const remainingPart = arr.slice(0, index + 1);
-  return rotatedPart.concat(remainingPart);
+// function rotateArray(arr: number[], index: number): number[] {
+//   const rotatedPart = arr.slice(index + 1);
+//   const remainingPart = arr.slice(0, index + 1);
+//   return rotatedPart.concat(remainingPart);
+// }
+
+// console.log(rotateArray([1, 2, 3, 4, 5, 6], 3));
+/******************************************************************************* */
+
+/**ZN-TASK:
+
+Shunday function yozing, u parametrdagi string ichidagi qavslar miqdori balansda ekanligini aniqlasin. Ya'ni ochish("(") va yopish(")") qavslar soni bir xil bolishi kerak.
+MASALAN: areParenthesesBalanced("string()ichida(qavslar)soni()balansda") return true
+*/
+
+//JAVOB
+
+function areParenthesesBalanced(str: string): boolean {
+  let balance = 0;
+
+  for (const char of str) {
+    if (char === "(") {
+      balance++;
+    } else if (char === ")") {
+      balance--;
+    }
+
+    if (balance < 0) {
+      return false;
+    }
+  }
+
+  return balance === 0;
 }
 
-console.log(rotateArray([1, 2, 3, 4, 5, 6], 3));
+console.log(areParenthesesBalanced("string()ichida(qavslar)soni()balansda"));
+console.log(areParenthesesBalanced("((qavslar noto'g'ri balansda"));
+console.log(areParenthesesBalanced("qavslar))ham noto'g'ri("));
