@@ -731,24 +731,53 @@ MASALAN: areParenthesesBalanced("string()ichida(qavslar)soni()balansda") return 
 
 //JAVOB
 
-function areParenthesesBalanced(str: string): boolean {
-  let balance = 0;
+// function areParenthesesBalanced(str: string): boolean {
+//   let balance = 0;
 
-  for (const char of str) {
-    if (char === "(") {
-      balance++;
-    } else if (char === ")") {
-      balance--;
-    }
+//   for (const char of str) {
+//     if (char === "(") {
+//       balance++;
+//     } else if (char === ")") {
+//       balance--;
+//     }
 
-    if (balance < 0) {
-      return false;
+//     if (balance < 0) {
+//       return false;
+//     }
+//   }
+
+//   return balance === 0;
+// }
+
+// console.log(areParenthesesBalanced("string()ichida(qavslar)soni()balansda"));
+// console.log(areParenthesesBalanced("((qavslar noto'g'ri balansda"));
+// console.log(areParenthesesBalanced("qavslar))ham noto'g'ri("));
+/******************************************************************************* */
+/**
+ ZO-TASK:
+
+Shunday function yozing, u parametridagi string ichidagi raqam va sonlarni sonini sanasin.
+MASALAN: countNumberAndLetters(“string152%\¥”) return {number:3, letter:6}
+
+ */
+
+//JAVOB
+
+function countNumberAndLetters(input: string): {
+  number: number;
+  letter: number;
+} {
+  let result = { number: 0, letter: 0 };
+
+  for (let char of input) {
+    if (char >= "0" && char <= "9") {
+      result.number++;
+    } else if ((char >= "a" && char <= "z") || (char >= "A" && char <= "Z")) {
+      result.letter++;
     }
   }
 
-  return balance === 0;
+  return result;
 }
 
-console.log(areParenthesesBalanced("string()ichida(qavslar)soni()balansda"));
-console.log(areParenthesesBalanced("((qavslar noto'g'ri balansda"));
-console.log(areParenthesesBalanced("qavslar))ham noto'g'ri("));
+console.log(countNumberAndLetters("strinAEWFW857445g152%\\¥")); // { number: 3, letter: 6 }
