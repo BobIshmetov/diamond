@@ -763,21 +763,45 @@ MASALAN: countNumberAndLetters(“string152%\¥”) return {number:3, letter:6}
 
 //JAVOB
 
-function countNumberAndLetters(input: string): {
-  number: number;
-  letter: number;
-} {
-  let result = { number: 0, letter: 0 };
+// function countNumberAndLetters(input: string): {
+//   number: number;
+//   letter: number;
+// } {
+//   let result = { number: 0, letter: 0 };
 
-  for (let char of input) {
-    if (char >= "0" && char <= "9") {
-      result.number++;
-    } else if ((char >= "a" && char <= "z") || (char >= "A" && char <= "Z")) {
-      result.letter++;
-    }
-  }
+//   for (let char of input) {
+//     if (char >= "0" && char <= "9") {
+//       result.number++;
+//     } else if ((char >= "a" && char <= "z") || (char >= "A" && char <= "Z")) {
+//       result.letter++;
+//     }
+//   }
 
-  return result;
+//   return result;
+// }
+
+// console.log(countNumberAndLetters("strinAEWFW857445g152%\\¥")); // { number: 3, letter: 6 }
+
+/******************************************************************************* */
+
+/** 
+ZP-TASK:
+
+Shunday function yozing, u parametridagi array ichida 2 marta qaytarilgan sonlarni alohida araryda qaytarsin.
+MASALAN: findDuplicates([1,2,3,4,5,4,3,4]) return [3, 4]
+*/
+
+//JAVOB
+
+function findDuplicates(arr: number[]): number[] {
+  const countMap = arr.reduce((map, num) => {
+    map[num] = (map[num] || 0) + 1;
+    return map;
+  }, {} as { [key: number]: number });
+
+  return Object.keys(countMap)
+    .filter((key) => countMap[Number(key)] > 1)
+    .map(Number);
 }
 
-console.log(countNumberAndLetters("strinAEWFW857445g152%\\¥")); // { number: 3, letter: 6 }
+console.log(findDuplicates([1, 2, 3, 4, 5, 4, 3, 4]));
