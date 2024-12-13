@@ -793,15 +793,46 @@ MASALAN: findDuplicates([1,2,3,4,5,4,3,4]) return [3, 4]
 
 //JAVOB
 
-function findDuplicates(arr: number[]): number[] {
-  const countMap = arr.reduce((map, num) => {
-    map[num] = (map[num] || 0) + 1;
-    return map;
-  }, {} as { [key: number]: number });
+// function findDuplicates(arr: number[]): number[] {
+//   const countMap = arr.reduce((map, num) => {
+//     map[num] = (map[num] || 0) + 1;
+//     return map;
+//   }, {} as { [key: number]: number });
 
-  return Object.keys(countMap)
-    .filter((key) => countMap[Number(key)] > 1)
-    .map(Number);
+//   return Object.keys(countMap)
+//     .filter((key) => countMap[Number(key)] > 1)
+//     .map(Number);
+// }
+
+// console.log(findDuplicates([1, 2, 3, 4, 5, 4, 3, 4]));
+
+/******************************************************************************* */
+
+/**
+ ZQ-TASK:
+
+Shunday function yozing, u parametridagi arrayni ichidagi 1 marta kelgan elemnetni qaytarsin.
+MASALAN: singleNumber([4, 2, 1, 2, 1]) return 4
+
+ */
+
+//JAVOB
+
+function singleNumber(arr: number[]): number | null {
+  const frequency = new Map<number, number>();
+
+  for (const num of arr) {
+    frequency.set(num, (frequency.get(num) || 0) + 1);
+  }
+
+  for (const [key, value] of frequency.entries()) {
+    if (value === 1) {
+      return key;
+    }
+  }
+
+  return null;
 }
 
-console.log(findDuplicates([1, 2, 3, 4, 5, 4, 3, 4]));
+console.log(singleNumber([5, 4, 2, 1, 2, 1]));
+console.log(singleNumber([4, 2, 1, 2, 1, 5]));
