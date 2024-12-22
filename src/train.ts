@@ -848,20 +848,50 @@ MASALAN: firstUniqueCharIndex(“stamp”) return 0
 
 //JAVOB
 
-function firstUniqueCharIndex(s: string): number {
-  const charCount: Record<string, number> = {};
+// function firstUniqueCharIndex(s: string): number {
+//   const charCount: Record<string, number> = {};
 
-  for (const char of s) {
-    charCount[char] = (charCount[char] || 0) + 1;
+//   for (const char of s) {
+//     charCount[char] = (charCount[char] || 0) + 1;
+//   }
+
+//   for (let i = 0; i < s.length; i++) {
+//     if (charCount[s[i]] === 1) {
+//       return i;
+//     }
+//   }
+
+//   return -1;
+// }
+
+// console.log(firstUniqueCharIndex("stamp"));
+/******************************************************************************* */
+
+/**
+ ZS-TASK:
+
+Shunday function yozing, u parametridagi array ichida takrorlanmagan raqamlar yig'indisini qaytarsin.
+MASALAN: sumOfUnique([1,2,3,2]) return 4
+ */
+
+//JAVOB
+
+function sumOfUnique(nums: number[]): number {
+  const count: Map<number, number> = new Map();
+
+  for (const num of nums) {
+    count.set(num, (count.get(num) || 0) + 1);
   }
 
-  for (let i = 0; i < s.length; i++) {
-    if (charCount[s[i]] === 1) {
-      return i;
+  let uniqueSum = 0;
+  count.forEach((freq, num) => {
+    if (freq === 1) {
+      uniqueSum += num;
     }
-  }
+  });
 
-  return -1;
+  return uniqueSum;
 }
 
-console.log(firstUniqueCharIndex("stamp"));
+const result = sumOfUnique([1, 2, 3, 2]);
+console.log(result);
