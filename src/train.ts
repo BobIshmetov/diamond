@@ -876,22 +876,52 @@ MASALAN: sumOfUnique([1,2,3,2]) return 4
 
 //JAVOB
 
-function sumOfUnique(nums: number[]): number {
-  const count: Map<number, number> = new Map();
+// function sumOfUnique(nums: number[]): number {
+//   const count: Map<number, number> = new Map();
 
-  for (const num of nums) {
-    count.set(num, (count.get(num) || 0) + 1);
+//   for (const num of nums) {
+//     count.set(num, (count.get(num) || 0) + 1);
+//   }
+
+//   let uniqueSum = 0;
+//   count.forEach((freq, num) => {
+//     if (freq === 1) {
+//       uniqueSum += num;
+//     }
+//   });
+
+//   return uniqueSum;
+// }
+
+// const result = sumOfUnique([1, 2, 3, 2]);
+// console.log(result);
+
+/******************************************************************************* */
+
+/*
+ZT-TASK:
+
+Shunday function yozing, u parametridagi array ichidagi barcha nollarni array oxiriga qoyib qolgan raqamlar ketma-ketligini saqlasin.
+MASALAN: moveZeroes([0, 1, 0, 3, 12]) return [1, 3, 12, 0, 0] 
+*/
+
+//JAVOB
+
+function moveZeroes(nums: number[]): number[] {
+  let nonZeroIndex = 0;
+
+  for (let i = 0; i < nums.length; i++) {
+    if (nums[i] !== 0) {
+      nums[nonZeroIndex] = nums[i];
+      nonZeroIndex++;
+    }
   }
 
-  let uniqueSum = 0;
-  count.forEach((freq, num) => {
-    if (freq === 1) {
-      uniqueSum += num;
-    }
-  });
+  for (let i = nonZeroIndex; i < nums.length; i++) {
+    nums[i] = 0;
+  }
 
-  return uniqueSum;
+  return nums;
 }
 
-const result = sumOfUnique([1, 2, 3, 2]);
-console.log(result);
+console.log(moveZeroes([0, 1, 0, 3, 12]));
