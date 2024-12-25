@@ -907,21 +907,57 @@ MASALAN: moveZeroes([0, 1, 0, 3, 12]) return [1, 3, 12, 0, 0]
 
 //JAVOB
 
-function moveZeroes(nums: number[]): number[] {
-  let nonZeroIndex = 0;
+// function moveZeroes(nums: number[]): number[] {
+//   let nonZeroIndex = 0;
 
-  for (let i = 0; i < nums.length; i++) {
-    if (nums[i] !== 0) {
-      nums[nonZeroIndex] = nums[i];
-      nonZeroIndex++;
+//   for (let i = 0; i < nums.length; i++) {
+//     if (nums[i] !== 0) {
+//       nums[nonZeroIndex] = nums[i];
+//       nonZeroIndex++;
+//     }
+//   }
+
+//   for (let i = nonZeroIndex; i < nums.length; i++) {
+//     nums[i] = 0;
+//   }
+
+//   return nums;
+// }
+
+// console.log(moveZeroes([0, 1, 0, 3, 12]));
+/******************************************************************************* */
+
+/*
+ZU-TASK:
+
+Shunday function yozing, uni 2 ta parametri bo'lsin, biri array va biri string. Function arrayda berilgan malumotlarni 2-parametrdagi string qiymati asosida guruhlab qaytarsin.
+MASALAN:
+const data = [
+  { name: 'Alice', age: 25, city: 'London' },
+  { name: 'Bob',   age: 30, city: 'New York' },
+  { name: 'Charlie', age: 25, city: 'London' },
+];
+console.log(groupBy(data, 'city')); // { 'London': [ { name: 'Alice', age: 25, city: 'London' }, { name: 'Charlie', age: 25, city: 'London' } ], 'New York': [ { name: 'Bob', age: 30, city: 'New York' } ] }
+
+*/
+
+//JAVOB
+function groupBy<T>(array: T[], key: keyof T): Record<string, T[]> {
+  return array.reduce((result, item) => {
+    const groupKey = String(item[key]); // Kalitni stringga aylantiramiz
+    if (!result[groupKey]) {
+      result[groupKey] = [];
     }
-  }
-
-  for (let i = nonZeroIndex; i < nums.length; i++) {
-    nums[i] = 0;
-  }
-
-  return nums;
+    result[groupKey].push(item);
+    return result;
+  }, {} as Record<string, T[]>);
 }
 
-console.log(moveZeroes([0, 1, 0, 3, 12]));
+// Misol:
+const data = [
+  { name: "Alice", age: 25, city: "London" },
+  { name: "Bob", age: 30, city: "New York" },
+  { name: "Charlie", age: 25, city: "London" },
+];
+
+console.log(groupBy(data, "city"));
